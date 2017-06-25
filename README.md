@@ -1,4 +1,4 @@
-# Personal React project
+# Personal React template
 
 > A React.js project
 
