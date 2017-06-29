@@ -2,13 +2,13 @@
   "presets": [
     "env",
     "react",
-    "stage-2"
+    "stage-0"
   ],
-  "plugins": [ "transform-runtime", "transform-decorators-legacy", "transform-function-bind" ],
+  "plugins": [ "transform-runtime", "transform-decorators-legacy", "react-require" ],
   "comments": false,
   "env": {
     "test": {
-      "presets": [ "env", "react", "stage-2" ],
+      "presets": [ "env", "react", "stage-0" ],
       "plugins": [ "istanbul" ]
     },
     "production": {

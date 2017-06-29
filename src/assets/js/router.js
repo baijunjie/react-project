@@ -16,6 +16,8 @@
  * - routeTree   路由树，表示源路由数组，包含子父级关系（主要用于创建 <Menu> 组件）
  *
  */
+import pathToRegexp from 'path-to-regexp';
+
 const slashStartReg = new RegExp('^/+');
 const slashEndReg = new RegExp('/+$');
 
@@ -79,7 +81,9 @@ function toReactRoutes(routes) {
 function findRoute(routes, key, value) {
     let targetRoute;
     routes.some(route => {
-        if (route[key] === value) {
+        if (route[key] === value ||
+            key === 'path' &&
+            pathToRegexp(route[key]).exec(value)) {
             return targetRoute = route;
         } else if (route.routes && route.routes.length) {
             return targetRoute = findRoute(route.routes, key, value);
@@ -91,7 +95,9 @@ function findRoute(routes, key, value) {
 function deleteRoute(routes, key, value) {
     let targetRoute;
     routes.some((route, i) => {
-        if (route[key] === value) {
+        if (route[key] === value ||
+            key === 'path' &&
+            pathToRegexp(route[key]).exec(value)) {
             routes.splice(i, 1);
             return targetRoute = route;
         } else if (route.routes && route.routes.length) {
