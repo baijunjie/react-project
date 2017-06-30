@@ -1,5 +1,5 @@
-var path = require('path')
 var webpack = require('webpack')
+var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 
@@ -37,7 +37,7 @@ module.exports = {
       //   }
       // },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },

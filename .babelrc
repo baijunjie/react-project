@@ -1,15 +1,18 @@
 {
   "presets": [
-    "env",
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
+    }],
     "react",
     "stage-0"
   ],
-  "plugins": [ "transform-runtime", "transform-decorators-legacy", "react-require" ],
-  "comments": false,
+  "plugins": ["transform-decorators-legacy", "react-require"],
   "env": {
     "test": {
-      "presets": [ "env", "react", "stage-0" ],
-      "plugins": [ "istanbul" ]
+      "plugins": ["istanbul"]
     },
     "production": {
       "presets": ["react-optimize"]
