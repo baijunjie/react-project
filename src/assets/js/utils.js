@@ -19,10 +19,10 @@ export function removeStorage(key) {
 
 // Session timeout validate
 export function sessionTimeoutValidate(key) {
-    let validTime = 8.64e7; // セッション有効期限
-    // let validTime = 10000; // 製造中時、とりあえず、10秒に設定
-
+    let validTime = 8.64e7; // 一天有效期
+    // let validTime = 10000; // 开发阶段，10秒有效期
     let data = getStorage(key);
+
     if (data &&
         data.createDate &&
         data.createDate + validTime > Date.now()) {
