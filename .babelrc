@@ -14,6 +14,9 @@
     "test": {
       "plugins": ["istanbul"]
     },
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    },
     "production": {
       "presets": ["react-optimize"]
     }
