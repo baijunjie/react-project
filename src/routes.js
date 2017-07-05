@@ -1,4 +1,4 @@
-import createComponent from '@/assets/js/createComponent';
+import lazyComponent from '@/assets/js/lazyComponent';
 
 /**
  * 配置路由
@@ -11,25 +11,25 @@ const Home = {
     label: 'React frame',
     name: 'home',
     path: '/',
-    component: createComponent(require('bundle-loader?lazy!@/views/Home'))
+    component: lazyComponent(require('bundle-loader?lazy!@/views/Home'))
 };
 
 const Login = {
     label: '登陆',
     name: 'login',
-    component: createComponent(require('bundle-loader?lazy!@/views/Login'))
+    component: lazyComponent(require('bundle-loader?lazy!@/views/Login'))
 };
 
 const Demo = {
     label: 'Demo1',
     name: 'demo1',
-    component: createComponent(require('bundle-loader?lazy!@/views/Demo'))
+    component: lazyComponent(require('bundle-loader?lazy!@/views/Demo'))
 };
 
 const Demo2 = {
     label: 'Demo2',
     name: 'demo2',
-    component: createComponent(require('bundle-loader?lazy!@/views/Demo'))
+    component: lazyComponent(require('bundle-loader?lazy!@/views/Demo'))
 };
 
 export default [
