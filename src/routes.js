@@ -1,3 +1,5 @@
+import createComponent from '@/assets/js/createComponent';
+
 /**
  * 配置路由
  * label: string  该页面在 menu 中的名称
@@ -9,25 +11,25 @@ const Home = {
     label: 'React frame',
     name: 'home',
     path: '/',
-    component: require('@/views/Home').default
+    component: createComponent(require('bundle-loader?lazy!@/views/Home'))
 };
 
 const Login = {
     label: '登陆',
     name: 'login',
-    component: require('@/views/Login').default
+    component: createComponent(require('bundle-loader?lazy!@/views/Login'))
 };
 
 const Demo = {
     label: 'Demo1',
     name: 'demo1',
-    component: require('@/views/Demo').default
+    component: createComponent(require('bundle-loader?lazy!@/views/Demo'))
 };
 
 const Demo2 = {
     label: 'Demo2',
     name: 'demo2',
-    component: require('@/views/Demo').default
+    component: createComponent(require('bundle-loader?lazy!@/views/Demo'))
 };
 
 export default [

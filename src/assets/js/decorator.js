@@ -18,7 +18,7 @@ export function titleChange(target) {
     let componentWillMount = target.prototype.componentWillMount;
     target.prototype.componentWillMount = function() {
         componentWillMount && this::componentWillMount();
-
+        if (!this.props || !this.props.location) return;
         const curRoute = router.getRoute('path', this.props.location.pathname);
         document.title = this.title = curRoute.label;
     }
