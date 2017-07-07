@@ -1,5 +1,5 @@
 /**
- * React Router 扩展
+ * React Router 扩展 0.1.0
  * @author Junjie.Bai
  *
  * router  返回一个 router 的对象，具有以下方法与属性。
@@ -22,19 +22,21 @@ const slashStartReg = new RegExp('^/+');
 const slashEndReg = new RegExp('/+$');
 
 const router = {
-    initRoutes(routes) {
-        router.routeTree = initRoutes(routes);
-        return router.routes = toReactRoutes(router.routeTree);
-    },
-
-    getRoute(key, value) {
-        return findRoute(router.routeTree, key, value);
-    },
-
+    initRoutes,
+    getRoute,
     findRoute,
     deleteRoute,
     matchRoutes
 };
+
+function initRoutes(routes) {
+    router.routeTree = initRoutes(routes);
+    return router.routes = toReactRoutes(router.routeTree);
+}
+
+function getRoute(key, value) {
+    return findRoute(router.routeTree, key, value);
+}
 
 function initRoutes(routes, parentRoute) {
     return routes.map(function(route) {
