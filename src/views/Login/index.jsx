@@ -1,6 +1,6 @@
 import React from 'react'
 import { titleChange } from '@/assets/js/decorator'
-import { utils, popup, storage } from 'G'
+import { utils, popup } from 'G'
 
 @titleChange
 export default class extends React.Component {
@@ -69,7 +69,6 @@ export default class extends React.Component {
                 let userData = {
                     createDate: Date.now()
                 }; // 模拟用户数据
-                storage.userData = userData;
                 utils.setStorage('userData', userData);
                 resolve();
                 alert('login success!');
@@ -92,7 +91,6 @@ export default class extends React.Component {
         //     }
         // }, (res) => {
         //     res.createDate = Date.now(); // 设置创建时间
-        //     storage.userData = res; // 存入全局
         //     utils.setStorage('userData', res); // 存入本地
         //     this.props.history.push('/'); // 跳转到首页
         // });

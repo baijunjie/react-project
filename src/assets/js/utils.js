@@ -1,3 +1,8 @@
+export function logout() {
+    removeStorage('userData');
+    location.reload();
+}
+
 export function getStorage(key) {
     let value = localStorage.getItem(key);
     try {

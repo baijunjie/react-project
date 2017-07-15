@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import router from '@/assets/js/router'
-import { logout, storage } from 'G'
+import { utils } from 'G'
 import './styles.less'
 
 const HashLink = ({ path, label, exact, className }) => (
@@ -29,10 +29,10 @@ export default class extends React.Component {
             <nav className="navbar navbar-inverse">
                 <div className="container">
                     {
-                        storage.userData &&
+                        utils.getStorage('userData') &&
                         <a id="logout"
                            className="logout glyphicon glyphicon-off"
-                           onClick={logout}></a>
+                           onClick={utils.logout}></a>
                     }
 
                     <div className="navbar-header">
@@ -51,10 +51,12 @@ export default class extends React.Component {
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                         <ul className="nav navbar-nav">
-                            { storage.userData &&
-                            this.menus.map((item, i) => (
-                            <HashLink key={i} {...item} />
-                            )) }
+                            {
+                                utils.getStorage('userData') &&
+                                this.menus.map((item, i) => (
+                                    <HashLink key={i} {...item} />
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>

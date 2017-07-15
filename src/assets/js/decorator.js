@@ -1,11 +1,11 @@
 import router from '@/assets/js/router'
-import { storage } from 'G'
+import { utils } from 'G'
 
 // 登陆验证修饰器
 export function loginValidate(target) {
     let componentWillMount = target.prototype.componentWillMount;
     target.prototype.componentWillMount = function() {
-        if (!storage.userData) {
+        if (!utils.getStorage('userData')) {
             this.props.history.replace('/login');
             return;
         }

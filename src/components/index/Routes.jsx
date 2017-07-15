@@ -3,7 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import router from '@/assets/js/router'
 import routes from '@/routes'
 
-router.initRoutes(routes);
+router.setRoutes(routes);
 
 export default class extends React.Component {
     render() {

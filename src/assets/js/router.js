@@ -5,7 +5,7 @@
  * router  返回一个 router 的对象，具有以下方法与属性。
  *
  * 方法：
- * - initRoutes  初始化路由配置对象，返回一个 React Router 可用的 routes 配置对象
+ * - setRoutes  初始化路由配置对象，返回一个 React Router 可用的 routes 配置对象
  * - getRoute    根据 key、value 获取在 routes 中对应的配置对象
  * - findRoute   根据 key、value 获取传入的 routes 中对应的配置对象（用于权限控制的修改，只有在创建 <Route> 组件之前修改才有效）
  * - deleteRoute 根据 key、value 删除传入的 routes 中对应的配置对象（用于权限控制的删除，只有在创建 <Route> 组件之前删除才有效）
@@ -22,14 +22,14 @@ const slashStartReg = new RegExp('^/+');
 const slashEndReg = new RegExp('/+$');
 
 const router = {
-    initRoutes,
+    setRoutes,
     getRoute,
     findRoute,
     deleteRoute,
     matchRoutes
 };
 
-function initRoutes(routes) {
+function setRoutes(routes) {
     router.routeTree = initRoutes(routes);
     return router.routes = toReactRoutes(router.routeTree);
 }
