@@ -9,7 +9,13 @@
     "react",
     "stage-0"
   ],
-  "plugins": ["transform-decorators-legacy", "react-require"],
+  "plugins": [
+    "transform-decorators-legacy",
+    "react-require",
+    ["import", [
+      { "libraryName": "antd", "style": true }
+    ]]
+  ],
   "env": {
     "test": {
       "plugins": ["istanbul"]
