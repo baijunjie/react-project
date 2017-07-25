@@ -16,6 +16,7 @@
       { "libraryName": "antd", "style": true }
     ]]
   ],
+  "comments": false,
   "env": {
     "test": {
       "plugins": ["istanbul"]
@@ -24,7 +25,7 @@
       "plugins": ["react-hot-loader/babel"]
     },
     "production": {
-      "presets": ["react-optimize"]
+      "presets": ["react-optimize", "transform-remove-console"]
     }
   }
 }

@@ -74,7 +74,10 @@ function toReactRoutes(routes) {
         if (route.routes && route.routes.length) {
             reactRoutes = reactRoutes.concat(toReactRoutes(route.routes));
         }
-        reactRoutes.push(route);
+
+        if (route.component) {
+            reactRoutes.push(route);
+        }
     });
 
     return reactRoutes;

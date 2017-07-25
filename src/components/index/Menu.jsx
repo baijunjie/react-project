@@ -4,13 +4,13 @@ import router from '@/assets/js/router'
 import { utils } from 'G'
 import './styles.less'
 
-const HashLink = ({ path, label, exact, className }) => (
+const HashLink = ({ path, title, exact, className }) => (
     <Route path={path} exact={exact} children={({ match }) => (
         <li className={match ? 'active' : ''}>
             {
                 match && match.isExact ?
-                <a className={className} href="javascript:;">{label}</a> :
-                <Link className={className} to={path}>{label}</Link>
+                <a className={className} href="javascript:;">{title}</a> :
+                <Link className={className} to={path}>{title}</Link>
             }
         </li>
     )}/>
@@ -47,7 +47,7 @@ export default class extends React.Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <HashLink className="navbar-brand" path={this.home.path} label={this.home.label} />
+                        <HashLink className="navbar-brand" path={this.home.path} title={this.home.title} />
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                         <ul className="nav navbar-nav">

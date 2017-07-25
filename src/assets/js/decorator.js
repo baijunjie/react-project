@@ -20,7 +20,7 @@ export function titleChange(target) {
         componentWillMount && this::componentWillMount();
         if (!this.props || !this.props.location) return;
         const curRoute = router.getRoute('path', this.props.location.pathname);
-        document.title = this.title = curRoute.label;
+        document.title = this.title = curRoute.title;
     }
 }
 
