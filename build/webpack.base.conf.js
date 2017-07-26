@@ -2,6 +2,7 @@ var webpack = require('webpack')
 var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
+var pkg = require('../package.json')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -10,20 +11,7 @@ function resolve (dir) {
 module.exports = {
   entry: {
     app: './src/main.js',
-
-    vendor: [
-      'jquery',
-      'jquery.animate',
-      'lodash',
-      'moment',
-      'path-to-regexp',
-      'react',
-      'react-dom',
-      'react-redux',
-      'react-router',
-      'react-router-dom',
-      'redux',
-    ]
+    vendor: Object.keys(pkg.dependencies)
   },
   output: {
     path: config.build.assetsRoot,
