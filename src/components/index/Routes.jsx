@@ -9,12 +9,16 @@ export default class extends React.Component {
     render() {
         return (
             <Switch>
-                { router.routes.map((route, i) => (
-                    route.from && <Redirect key={i} from={route.from} to={route.path} exact />
-                )) }
-                { router.routes.map((route, i) => (
-                    <Route key={i} {...route} exact />
-                )) }
+                {
+                    router.routes.map((route, i) => (
+                        route.from && <Redirect key={i} from={route.from} to={route.path} exact />
+                    ))
+                }
+                {
+                    router.routes.map((route, i) => (
+                        <Route key={i} {...route} exact />
+                    ))
+                }
             </Switch>
         )
     }
